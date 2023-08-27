@@ -8,6 +8,7 @@ body{
     font-family: system-ui;
     height: 100vh;
     background: var(--bg);
+    color: var(--text);
 }
 .container{
     display: flex;
