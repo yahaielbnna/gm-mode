@@ -36,3 +36,25 @@ h1{
     -webkit-text-fill-color: transparent;
     font-weight: bolder;
 }
+.float-toggle-button{
+    position: absolute;
+    top: 100%;
+    left: 100%;
+    transform: translate(-100%,-100%);
+}
+.float-toggle-button button{ 
+    color: var(--text2);
+    padding: 10px;
+    margin: 20px;
+    border-radius: 50px;
+    width: 50px;
+    height: 50px;
+    background: var(--bg2);
+    border: none;
+    cursor: pointer;
+    opacity: 0.7;
+    transition: 0.3s;
+}
+.float-toggle-button button:hover{ 
+    opacity: 1;
+}
