@@ -23,6 +23,18 @@ function GMode(button, light, dark, isLight = true) {
                 data = {},
                 lastBodyClass;
             isLight ? body.dataset.GMode = 'light' : body.dataset.GMode = 'dark';
+
+            if (localStorage.getItem('GMODE') && localStorage.getItem('GMODE') == 'light') {
+                data = light;
+                body.dataset.GMode = 'light';
+                lastBodyClass = dark.class;
+            } else {
+                data = dark;
+                body.dataset.GMode = 'dark';
+                lastBodyClass = light.class;
+            }
+            __Config_GMODE()
+
             el.addEventListener('click', _ => {
                 if (body.dataset.GMode == 'light') {
                     data = dark;
@@ -33,6 +45,9 @@ function GMode(button, light, dark, isLight = true) {
                     body.dataset.GMode = 'light';
                     lastBodyClass = dark.class;
                 }
+                __Config_GMODE()
+            })
+            function __Config_GMODE() {
                 gmode_append_css__(data.StyleSrc);
                 body.classList.remove(lastBodyClass);
                 body.classList.add(data.class);
@@ -59,7 +74,8 @@ function GMode(button, light, dark, isLight = true) {
                         }
                     }
                 }
-            })
+                localStorage.setItem('GMODE', body.dataset.GMode);
+            }
         }
     } catch (error) {
         console.error(error);
