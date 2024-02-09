@@ -26,29 +26,40 @@ function GMode(button, light, dark, appContainer = 'body', isLight = true) {
             appContainer !== 'body' ? body = document.querySelector(appContainer) : null;
             isLight ? body.dataset.GMode = 'light' : body.dataset.GMode = 'dark';
 
-            if (localStorage.getItem('GMODE') && localStorage.getItem('GMODE') == 'light') {
-                data = light;
-                body.dataset.GMode = 'light';
-                lastBodyClass = dark.class;
-            } else {
-                data = dark;
-                body.dataset.GMode = 'dark';
-                lastBodyClass = light.class;
-            }
+            localStorage.getItem('GMODE') && localStorage.getItem('GMODE') == 'light' ? __Config_GMODE_LIGHT__() : __Config_GMODE_DARK__();
+
             __Config_GMODE()
 
             el.addEventListener('click', _ => {
-                if (body.dataset.GMode == 'light') {
-                    data = dark;
-                    body.dataset.GMode = 'dark';
-                    lastBodyClass = light.class;
-                } else {
-                    data = light;
-                    body.dataset.GMode = 'light';
-                    lastBodyClass = dark.class;
-                }
+                body.dataset.GMode == 'light' ? __Config_GMODE_DARK__() : __Config_GMODE_LIGHT__();
+
                 __Config_GMODE()
             })
+            function __Config_GMODE_LIGHT__() {
+                data = light;
+                body.dataset.GMode = 'light';
+                lastBodyClass = dark.class;
+                if (data.attr) {
+                    __Config_GMODE_Attributes__(data.attr, dark.attr)
+                }
+            }
+            function __Config_GMODE_DARK__() {
+                data = dark;
+                body.dataset.GMode = 'dark';
+                lastBodyClass = light.class;
+                if (data.attr) {
+                    __Config_GMODE_Attributes__(data.attr, light.attr)
+                }
+            }
+            function __Config_GMODE_Attributes__(New__, Old__) {
+                for (const [attrName, attrValue] of Object.entries(Old__)) {
+                    body.removeAttribute(attrName);
+                }
+
+                for (const [attrName, attrValue] of Object.entries(New__)) {
+                    body.setAttribute(attrName, attrValue);
+                }
+            }
             function __Config_GMODE() {
                 gmode_append_css__(data.StyleSrc);
                 body.classList.remove(lastBodyClass);
