@@ -34,4 +34,4 @@ new GMode('button.float', {
         class: ['class_dark_1', 'class_dark_2'],
         attr: { 'light': 'no' }
     }
-}, false)
+}, 'html', false)

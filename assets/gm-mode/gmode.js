@@ -3,9 +3,10 @@
  * @param {string|object} button 
  * @param {object} light 
  * @param {object} dark 
+ * @param {string} appContainer
  * @param {boolean} isLight 
  */
-function GMode(button, light, dark, isLight = true) {
+function GMode(button, light, dark, appContainer = 'body', isLight = true) {
     try {
         let el;
         if (typeof button == "string") {
@@ -22,6 +23,7 @@ function GMode(button, light, dark, isLight = true) {
             let body = document.body,
                 data = {},
                 lastBodyClass;
+            appContainer !== 'body' ? body = document.querySelector(appContainer) : null;
             isLight ? body.dataset.GMode = 'light' : body.dataset.GMode = 'dark';
 
             if (localStorage.getItem('GMODE') && localStorage.getItem('GMODE') == 'light') {
