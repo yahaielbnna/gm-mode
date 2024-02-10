@@ -2,7 +2,7 @@
   "name": "gmode",
   "version": "1.0.0",
   "description": "Creating dark & light toggling website. Make your own colors in both dark and light theme with high controllable functions.",
-  "main": "index.js",
+  "main": "gmode.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
