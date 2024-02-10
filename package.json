@@ -1,0 +1,44 @@
+{
+  "name": "gmode",
+  "version": "1.0.0",
+  "description": "Creating dark & light toggling website. Make your own colors in both dark and light theme with high controllable functions.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/yahaielbnna/gm-mode.git"
+  },
+  "keywords": [
+    "mode",
+    "switcher",
+    "theme",
+    "light",
+    "dark",
+    "night",
+    "dark",
+    "mode",
+    "dark",
+    "light",
+    "mode",
+    "toggle",
+    "mode",
+    "switche",
+    "mode",
+    "mode",
+    "toggle",
+    "mode",
+    "switcher",
+    "dark",
+    "theme",
+    "light",
+    "theme"
+  ],
+  "author": "Yahia Elbanna",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/yahaielbnna/gm-mode/issues"
+  },
+  "homepage": "https://github.com/yahaielbnna/gm-mode#readme"
+}
