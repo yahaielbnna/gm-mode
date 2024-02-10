@@ -18,13 +18,8 @@
   </li>
 </ul>
 
-# How to set up gm-mode? 🔥
+# Installation 🔥
 
-<span>
-Just download the `gmode.js` file and include it in the first of your script tags in your HTML file like
-
+```sh
+npm i gmode
 ```
-<script src="[your scripts folder]/gmode.js"></script>
-```
-then you can use your script file with the power of gm-mode. I told you, it's simple!
-</span>
